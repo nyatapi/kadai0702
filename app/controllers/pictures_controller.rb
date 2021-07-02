@@ -43,8 +43,7 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-    redirect_to pictures_path, notice: "Deleted post
-"
+    redirect_to pictures_path, notice: "Deleted post"
   end
 
   private
