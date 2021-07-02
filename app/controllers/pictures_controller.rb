@@ -21,7 +21,7 @@ class PicturesController < ApplicationController
     if params[:back]
       render :new
     elsif @picture.save
-      redirect_to pictures_path, notice: '投稿しました。'
+      redirect_to pictures_path, notice: 'Completed'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class PicturesController < ApplicationController
 
   def update
     if @picture.update(picture_params)
-      redirect_to pictures_path, notice: "投稿を編集しました。"
+      redirect_to pictures_path, notice: "Edited"
     else
       render :edit
     end
@@ -43,7 +43,8 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-    redirect_to pictures_path, notice: "投稿を削除しました。"
+    redirect_to pictures_path, notice: "Deleted post
+"
   end
 
   private
