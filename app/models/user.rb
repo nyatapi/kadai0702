@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :pictures
   before_validation { email.downcase! }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -7,4 +8,4 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
-  end
+end
